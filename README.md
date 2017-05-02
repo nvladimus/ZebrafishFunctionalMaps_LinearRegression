@@ -1,9 +1,9 @@
 # Computing functional maps in zebrafish brain
 Workflow:
-* Parsing of the behavior/stimulus data into 3 regressors (forward, backward motion of stimulus, and fictive swimming).
+* Parsing the behavior/stimulus data into 3 regressors (forward, backward motion of stimulus, and fictive swimming).
 * Filtering, rigid registration and correction for XY drift in the imaging data.
 * Computing voxel-wise regression of the imaging data with the behavior/stimulus regressors.
-* Saving the functional maps of zebrafish brain in 3-colored TIFF files for visual inspection.
+* Saving the functional maps of zebrafish brain in 3-color TIFF files for visual inspection.
 
 Small downsampled datasets are provided in two `raw.zip` files, 350 MB each, 
 containing behavior and imaging data acquired with [Zebrascope](https://www.nature.com/nmeth/journal/v11/n9/full/nmeth.3040.html). 
