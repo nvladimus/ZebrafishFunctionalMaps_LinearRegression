@@ -39,7 +39,7 @@ expDir = `C:/../ZebrafishFunctionalMaps_LinearRegression-master/2014-08-01fish2_
 #### On local computer
 Execute the code cells in `FunctionalMaps_2014-08-01fish2(H2B).ipynb`, starting from top. By default, the code runs on your local computer.
 
-If all blocks run successfully, functional maps of the fish brain will be saved in file `compositeRGBgamma0.5.tif` after about 15 min. The TIFF red channel contains mapping for fictive swimming, green for forward stimulus, blue for backward stimulus. The file can be opened, for example, in [Fiji](https://fiji.sc/).
+If all blocks run successfully, functional maps of the fish brain will be saved in file `../proc/compositeRGBgamma0.5.tif` after about 15 min. The TIFF red channel contains mapping for fictive swimming, green for forward stimulus, blue for backward stimulus. The file can be opened, for example, in [Fiji](https://fiji.sc/).
 
 #### On computer cluster
 Launch the Jupyter notebook environment on **master** node running a Spark cluster. Start the `FunctionalMaps_2014-08-01fish2(H2B).ipynb` notebook and change execution to distributed mode:
