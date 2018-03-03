@@ -20,10 +20,9 @@ pip install https://github.com/thunder-project/thunder/zipball/master
 pip install https://github.com/thunder-project/thunder-regression/zipball/master
 pip install https://github.com/thunder-project/thunder-registration/zipball/master
 ```
-(optional, for test before cluster deployment): [Spark](http://spark.apache.org/docs/latest/)
 
 #### Computer cluster
-The cluster needs to have distributed computing engine [`Spark`](https://github.com/apache/spark) running. Consult the official [Spark documentation](http://spark.apache.org/docs/latest/) for details. 
+The cluster needs to have distributed computing engine [`Spark`](https://github.com/apache/spark) running. Consult the official [Spark documentation](http://spark.apache.org/docs/latest/) for details. See example on setting [Spark on Janelia cluster](https://github.com/freeman-lab/spark-janelia).
 
 ### Installing 
 Clone or download this repository. Download file [`2014-08-01fish2_H2B/raw.zip`](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2014-08-01fish2_H2B/raw.zip?raw=true) separately (350 MB).
