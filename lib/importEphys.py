@@ -139,7 +139,6 @@ def getPeaks(fltch,deadTime=40):
 
 # find threshold
 def getThreshold(fltch,peaks,wind=90000,shiftScale=2.5):
-    ''' edited by nvladimus '''
     th = np.zeros(fltch.shape)
     
     for t in np.arange(0,fltch.size-wind, wind):

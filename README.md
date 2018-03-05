@@ -12,7 +12,7 @@ The code can be executed as Python Jupyter notebooks, using a personal computer 
 #### Local computer
 OS: Windows 7 or higher, or macOS X.
 
-[Jupyter Notebook](http://jupyter.org/install), recommended installation: Anaconda
+[Jupyter Notebook](http://jupyter.org/install), recommended installation: Anaconda, Python 2.7 or 3.6.
 
 Installed Thunder libraries for image processing. For installing, run the following commands in shell (or Anaconda Prompt)
 ```
