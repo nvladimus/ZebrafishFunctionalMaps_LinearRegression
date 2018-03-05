@@ -10,7 +10,7 @@ The code can be executed as Python Jupyter notebooks, using a personal computer 
 
 ### Prerequisites
 #### Local computer
-OS: Windows 7 or higher, or macOS X.
+OS: Windows 7 or higher, macOS X.
 
 [Jupyter Notebook](http://jupyter.org/install), recommended installation: Anaconda, Python 2.7 or 3.6.
 
