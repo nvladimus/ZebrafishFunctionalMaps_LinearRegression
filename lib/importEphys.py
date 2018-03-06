@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 04 16:40:04 2014
-script for importing an .10ch files
-@author: nvladimus
+script for importing ephys *.10ch files
+@authors: d-v-b, nvladimus
 """
 import numpy as np
 def import10ch(filename):
