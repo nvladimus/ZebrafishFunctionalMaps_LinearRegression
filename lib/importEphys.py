@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 04 16:40:04 2014
-script for importing ephys *.10ch files
-@authors: d-v-b, nvladimus
+functions for importing and parsing ephys files (*.10ch)
+@authors: swim detection algorithm: M.Ahrens; python implementation: @d-v-b, @nvladimus
 """
 import numpy as np
 def import10ch(filename):
