@@ -1,7 +1,7 @@
 # Computing functional maps of zebrafish brain
 This code processes light-sheet data in several steps:
 * parsing behavior/stimulus time series into 3 regressors,
-* preprocessing imaging stacks: median filtering, rigid registration and correction for XY drift,
+* preprocessing imaging stacks: rigid registration and correction for XY drift,
 * computing functional maps by linear regression,
 * saving the functional maps.
 
@@ -34,7 +34,7 @@ Open the `FunctionalMaps_2014-08-01fish2(H2B).ipynb`. Change the raw data path t
 expDir = `C:/../ZebrafishFunctionalMaps_LinearRegression-master/2014-08-01fish2_H2B/`
 ```
 
-### Running the test
+### Running the notebooks
 #### On local computer
 Execute the code cells in `FunctionalMaps_2014-08-01fish2(H2B).ipynb`, starting from top. By default, the code runs on your local computer.
 
@@ -48,7 +48,8 @@ sparkOn = True
 Then execute the code cells in sequential order, as before. The resulting functional maps will be saved in TIFF file.
 
 ### Datasets
-Dataset `2014-08-01fish2_H2B/raw.zip` contains brain activity data from *elavl3:GCaMP6-H2B* (nuclear-localized GCaMP6f) fish during optomotor response behavior.
-Dataset `2016-07-26fish1_cyto/raw.zip` contains analogous data from *elavl3:GCaMP6f* (GCaMP6f expressed in cytosol of neurons).
+[2014-08-01fish2_H2B/raw.zip](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2014-08-01fish2_H2B/raw.zip?raw=true) contains brain activity data from *elavl3:GCaMP6-H2B* (nuclear-localized GCaMP6f) fish during optomotor response behavior.
+
+[2016-07-26fish1_cyto/raw.zip](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2016-07-26fish1_cyto/raw.zip?raw=true) contains brain activity data from *elavl3:GCaMP6f* (GCaMP6f expressed in the cytosol of neurons).
 
 Each set contains 100 stacks (time points), downsampled to 1.62 micron/px (x,y) and 5 micron/px (z) spatial resolution. Temporal resolution is 0.55 s/stack.
