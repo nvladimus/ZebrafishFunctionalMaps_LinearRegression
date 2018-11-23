@@ -6,7 +6,7 @@ This code processes light-sheet data in several steps:
 * saving the functional maps.
 
 ## Getting started
-The code can be executed as Python Jupyter notebooks, using a personal computer or a cluster. Two downsampled datasets are provided in `raw.zip` files, 350 MB each, containing behavior and imaging data acquired with [Zebrascope](https://www.nature.com/nmeth/journal/v11/n9/full/nmeth.3040.html).
+The code can be executed as Python Jupyter notebooks, using a personal computer or a cluster. Two downsampled datasets are provided in `raw.zip` files (350 MB each), containing behavior and imaging data.
 
 ### Prerequisites
 #### Local computer
@@ -24,12 +24,12 @@ pip install https://github.com/thunder-project/thunder-registration/zipball/mast
 #### Computer cluster
 The cluster needs to have distributed computing engine [`Spark`](https://github.com/apache/spark) running. Consult the official [Spark documentation](http://spark.apache.org/docs/latest/) for details. See example on setting [Spark on Janelia cluster](https://github.com/freeman-lab/spark-janelia).
 
-### Installing 
+### Installation
 Clone or download this repository. Download file [`2014-08-01fish2_H2B/raw.zip`](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2014-08-01fish2_H2B/raw.zip?raw=true) separately (350 MB).
 
 Start the Jupyter Notebook environment.
 
-Open the `FunctionalMaps_2014-08-01fish2(H2B).ipynb`. Change the raw data path to your folder 
+Open the notebook file [FunctionalMaps_2014-08-01fish2(H2B).ipynb](FunctionalMaps_2014-08-01fish2(H2B).ipynb). Set the path to raw data downloaded and unzipped on your local computer: 
 ```
 expDir = `C:/../ZebrafishFunctionalMaps_LinearRegression-master/2014-08-01fish2_H2B/`
 ```
@@ -53,3 +53,8 @@ Then execute the code cells in sequential order, as before. The resulting functi
 [2016-07-26fish1_cyto/raw.zip](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2016-07-26fish1_cyto/raw.zip?raw=true) contains brain activity data from *elavl3:GCaMP6f* (GCaMP6f expressed in the cytosol of neurons).
 
 Each set contains 100 stacks (time points), downsampled to 1.62 micron/px (x,y) and 5 micron/px (z) spatial resolution. Temporal resolution is 0.55 s/stack.
+
+### Citation
+If you use the code or data, please cite the original paper:
+
+*Brain-wide circuit interrogation at the cellular level guided by online analysis of neuronal function.* [Vladimirov et al, Nat. Methods, 2018](http://dx.doi.org/10.1038/s41592-018-0221-x).
