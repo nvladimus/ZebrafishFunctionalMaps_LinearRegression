@@ -1,31 +1,60 @@
-# Computing functional maps in zebrafish brain
-Workflow:
-* Parsing the behavior/stimulus data into 3 regressors (forward, backward motion of stimulus, and fictive swimming).
-* Filtering, rigid registration and correction for XY drift in the imaging data.
-* Computing voxel-wise regression of the imaging data with the behavior/stimulus regressors.
-* Saving the functional maps of zebrafish brain in 3-color TIFF files for visual inspection.
+# Computing functional maps of zebrafish brain
+This code processes light-sheet data in several steps:
+* parsing behavior/stimulus time series into 3 regressors,
+* preprocessing imaging stacks: rigid registration and correction for XY drift,
+* computing functional maps by linear regression,
+* saving the functional maps.
 
-Small downsampled datasets are provided in two `raw.zip` files, 350 MB each, 
-containing behavior and imaging data acquired with [Zebrascope](https://www.nature.com/nmeth/journal/v11/n9/full/nmeth.3040.html). 
-The imaging data contains 100 stacks (time points), downsampled to 1.62 micron/px (x,y) and 5 micron/px (z) spatial resolution. Temporal resolution is 0.55 s (time per stack).
+## Getting started
+The code can be executed as Python Jupyter notebooks, using a personal computer or a cluster. Two downsampled datasets are provided in `raw.zip` files (350 MB each), containing behavior and imaging data.
 
-Dataset `2014-08-01fish2_H2B/raw.zip` contains brain activity data from *elavl3:GCaMP6-H2B* (nuclear-localized GCaMP6) fish during optomotor response behavior.
+### Prerequisites
+#### Local computer
+OS: Windows 7 or higher, macOS X.
 
-Dataset `2016-07-26fish1_cyto/raw.zip` contains analogous data from *elavl3:GCaMP6f* (GCaMP6 expressed in cytosol of neurons).
+[Jupyter Notebook](http://jupyter.org/install), recommended installation: Anaconda, Python 2.7 or 3.6.
 
-## Installation
-1. Install Python distribution, for example from [Anaconda Python distribution](https://docs.continuum.io/anaconda/install). 
-2. Instal Thunder libraries required from image processing, by running the following commands in shell (or Anaconda Prompt)
+Installed Thunder libraries for image processing. For installing, run the following commands in shell (or Anaconda Prompt)
 ```
 pip install https://github.com/thunder-project/thunder/zipball/master
 pip install https://github.com/thunder-project/thunder-regression/zipball/master
 pip install https://github.com/thunder-project/thunder-registration/zipball/master
 ```
-3. Unpack `2014-08-01fish2_H2B/raw.zip` and `2016-07-26fish1_cyto/raw.zip` files.
-4. Launch the IPython notebook environment (Jupyter Notebook).
-5. Launch the `FunctionalMaps_2014-08-01fish2(H2B)_downsampled.ipynb`. Change the `expDir` variable to your local data folder. 
-6. The code can be executed in local mode (on a single computer), or in distributed mode (in a cluster with [spark](https://github.com/apache/spark) computing engine installed). 
-Set the variable `sparkOn` accordingly.
-7. After executing all IPython blocks, functional maps of the fish brain will be saved in file `compositeRGBgamma0.5.tif`, 
-red channel for fictive swimming, green for forward stimulus, blue for backward stimulus.
 
+#### Computer cluster
+The cluster needs to have distributed computing engine [`Spark`](https://github.com/apache/spark) running. Consult the official [Spark documentation](http://spark.apache.org/docs/latest/) for details. See example on setting [Spark on Janelia cluster](https://github.com/freeman-lab/spark-janelia).
+
+### Installation
+Clone or download this repository. Download file [`2014-08-01fish2_H2B/raw.zip`](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2014-08-01fish2_H2B/raw.zip?raw=true) separately (350 MB).
+
+Start the Jupyter Notebook environment.
+
+Open the notebook file [FunctionalMaps_2014-08-01fish2(H2B).ipynb](FunctionalMaps_2014-08-01fish2(H2B).ipynb). Set the path to raw data downloaded and unzipped on your local computer: 
+```
+expDir = `C:/../ZebrafishFunctionalMaps_LinearRegression-master/2014-08-01fish2_H2B/`
+```
+
+### Running the notebooks
+#### On local computer
+Execute the code cells in `FunctionalMaps_2014-08-01fish2(H2B).ipynb`, starting from top. By default, the code runs on your local computer.
+
+If all blocks run successfully, functional maps of the fish brain will be saved in file `../proc/compositeRGBgamma0.5.tif` after about 15 min. The TIFF red channel contains mapping for fictive swimming, green for forward stimulus, blue for backward stimulus. The file can be opened, for example, in [Fiji](https://fiji.sc/).
+
+#### On computer cluster
+Launch the Jupyter notebook environment on **master** node running a Spark cluster. Start the `FunctionalMaps_2014-08-01fish2(H2B).ipynb` notebook and change execution to distributed mode:
+```
+sparkOn = True
+```
+Then execute the code cells in sequential order, as before. The resulting functional maps will be saved in TIFF file.
+
+### Datasets
+[2014-08-01fish2_H2B/raw.zip](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2014-08-01fish2_H2B/raw.zip?raw=true) contains brain activity data from *elavl3:GCaMP6-H2B* (nuclear-localized GCaMP6f) fish during optomotor response behavior.
+
+[2016-07-26fish1_cyto/raw.zip](https://github.com/optofish-paper/ZebrafishFunctionalMaps_LinearRegression/blob/master/2016-07-26fish1_cyto/raw.zip?raw=true) contains brain activity data from *elavl3:GCaMP6f* (GCaMP6f expressed in the cytosol of neurons).
+
+Each set contains 100 stacks (time points), downsampled to 1.62 micron/px (x,y) and 5 micron/px (z) spatial resolution. Temporal resolution is 0.55 s/stack.
+
+### Citation
+If you use the code or data, please cite the original paper:
+
+*Brain-wide circuit interrogation at the cellular level guided by online analysis of neuronal function.* [Vladimirov et al, Nat. Methods, 2018](http://dx.doi.org/10.1038/s41592-018-0221-x).
