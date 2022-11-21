@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/90018285.svg)](https://zenodo.org/badge/latestdoi/90018285)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+
 # Computing functional maps of zebrafish brain
 This code processes light-sheet data in several steps:
 * parsing behavior/stimulus time series into 3 regressors,
@@ -58,3 +61,7 @@ Each set contains 100 stacks (time points), downsampled to 1.62 micron/px (x,y) 
 If you use the code or data, please cite the original paper:
 
 *Brain-wide circuit interrogation at the cellular level guided by online analysis of neuronal function.* [Vladimirov et al, Nat. Methods, 2018](http://dx.doi.org/10.1038/s41592-018-0221-x).
+
+To cite this code specifically, please use the following DOI 
+
+[![DOI](https://zenodo.org/badge/90018285.svg)](https://zenodo.org/badge/latestdoi/90018285)
